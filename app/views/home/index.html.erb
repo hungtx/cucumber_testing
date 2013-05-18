@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+  <h3>Home</h3>
+	<% @users.each do |user| %>
+  		<p>User: <%= user.name %> </p>
+	<% end %> 
+<% else %>
+	<div class="center hero-unit">
+
+		<h1>Welcome to the TopCompetitors</h1>
+		<h2>
+		  Compete with the knowledges.
+		</h2>
+		 <%= link_to "Sign up now!", "#", class: "btn btn-large btn-primary" %>
+	</div>
+<% end %> 

@@ -1,0 +1,16 @@
+<li>
+  <h4><%= link_to h(company.name), company %></h4>
+  <span class="content"><%= company.description %></span><br>
+  <span class="timestamp">
+    Created <%= time_ago_in_words(company.created_at) %> ago.
+  </span>
+  </span>
+  <% if can? :update, company%>
+  	<%= link_to "edit", edit_company_path(company)%> 
+  <% end %>
+  <% if can? :destroy, company%>
+  	<%= link_to "delete", company, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: company.name %>
+  <% end %>
+</li>

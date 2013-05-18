@@ -1,0 +1,21 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @user.name %>
+      </h1>
+      <p>Email: <%= @user.email if @user.email %></p>
+    </section>
+  </aside>
+  <div class="span8">
+  	<% if @user==current_user%>
+	    <% if @user.companies.any? %>
+	      <h3>Companies (<%= @user.companies.count %>)</h3>
+	      <ol class="companies">
+	        <%= render @companies %>
+	      </ol>
+	    <% end %>
+	<% end %>   
+  </div>
+</div>

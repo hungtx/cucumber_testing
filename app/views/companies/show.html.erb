@@ -1,0 +1,14 @@
+<% provide(:title, @company.name) %>
+<div class="row">
+  <section>
+      <h1>
+        <%= @company.name %>
+      </h1>
+      <p>Description: <%= @company.description if @company.description %></p>
+      <p>Address: <%= @company.address if @company.address %></p>
+      <p>City: <%= @company.city if @company.city %></p>
+      <p>Country: <%= @company.country if @company.country %></p>
+      <p>Email: <%= @company.email if @company.email %></p>
+    </section>
+  
+</div>
